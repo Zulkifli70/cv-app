@@ -8,7 +8,7 @@ function EduForm({ data, addEducation, removeEducation, handleEducation }) {
       {data.education.map((education, index) => (
         <div key={education.id}>
           {data.education.length > 1 && (
-            <div className="flex justify-between items-center">
+            <div className="flex justify-between items-center mb-3">
               <h3 className="text-lg font-medium text-gray-700">
                 Education {index + 1}
               </h3>
@@ -86,7 +86,10 @@ function EduForm({ data, addEducation, removeEducation, handleEducation }) {
         </div>
       ))}
 
-      <button className="w-full px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-200 flex items-center justify-center gap-2">
+      <button
+        className="w-full px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
+        onClick={addEducation}
+      >
         + Add Education
       </button>
     </div>

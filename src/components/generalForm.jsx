@@ -8,7 +8,7 @@ function GeneralForm({ data, handleData }) {
       </h2>
       <div className="grid grid-cols-2 gap-2">
         <input
-          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:bg-blue-100"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
           type="text"
           maxLength={15}
           value={data.info[0].text}
@@ -16,7 +16,7 @@ function GeneralForm({ data, handleData }) {
           placeholder="First Name"
         />
         <input
-          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:bg-blue-100"
+          className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
           type="text"
           maxLength={15}
           value={data.info[1].text}
@@ -25,7 +25,7 @@ function GeneralForm({ data, handleData }) {
         />
       </div>
       <input
-        className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:bg-blue-100"
+        className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
         type="text"
         maxLength={50}
         value={data.info[2].text}
@@ -33,7 +33,7 @@ function GeneralForm({ data, handleData }) {
         placeholder="Title"
       />
       <textarea
-        className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:bg-blue-100"
+        className="px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors resize-none"
         rows={5}
         maxLength={600}
         value={data.info[3].text}

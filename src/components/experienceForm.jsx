@@ -26,29 +26,29 @@ function ExpForm({ data, addExp, removeExp, handleExp }) {
             <div>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
                 name="position"
                 value={experience.position}
                 onChange={(e) => handleExp(e, experience.id)}
-                placeholder="e.g. Software Developer"
+                placeholder="Position (e.g. Software Developer)"
               />
             </div>
 
             <div>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
                 name="company"
                 value={experience.company}
                 onChange={(e) => handleExp(e, experience.id)}
-                placeholder="e.g. ABC Tech Company"
+                placeholder="Company (e.g. ABC Tech Company)"
               />
             </div>
 
             <div>
               <textarea
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none hover:border-blue-300 transition-colors"
                 name="jobDesc"
                 value={experience.jobDesc}
                 onChange={(e) => handleExp(e, experience.id)}
@@ -61,7 +61,7 @@ function ExpForm({ data, addExp, removeExp, handleExp }) {
 
             <input
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
               name="startDate"
               value={experience.startDate}
               onChange={(e) => handleExp(e, experience.id)}
@@ -70,7 +70,7 @@ function ExpForm({ data, addExp, removeExp, handleExp }) {
 
             <input
               type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
               name="endDate"
               value={experience.endDate}
               onChange={(e) => handleExp(e, experience.id)}
