@@ -92,14 +92,14 @@ p {
   @apply px-3 py-1.5 text-xs;
 }
 
+/* Updated CV Preview Styles */
 .cv-preview {
-  @apply bg-white shadow-xl rounded-lg overflow-hidden;
-  max-width: 210mm;
-  min-height: 297mm;
+  @apply bg-white shadow-xl rounded-lg overflow-hidden w-full;
+  /* Remove fixed dimensions for responsive design */
 }
 
 .cv-preview-container {
-  @apply border border-slate-200 rounded-lg overflow-hidden bg-white;
+  @apply border border-slate-200 rounded-lg overflow-hidden bg-white w-full;
 }
 
 .mobile-nav-tabs {
@@ -107,6 +107,7 @@ p {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
+/* Print-specific styles */
 @media print {
   body {
     @apply bg-white;
@@ -124,6 +125,22 @@ p {
     margin: 0 !important;
     max-width: none !important;
     border-radius: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+  }
+
+  /* Ensure proper A4 sizing when printing */
+  .cv-preview-container {
+    border: none !important;
+    border-radius: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+  }
+
+  /* Print page setup */
+  @page {
+    size: A4;
+    margin: 0.5in;
   }
 }
 
