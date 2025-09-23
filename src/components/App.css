@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-/* CV Builder Custom Variables */
 :root {
-  /* Custom CV specific colors */
   --cv-accent: #3b82f6;
   --cv-accent-hover: #2563eb;
   --cv-success: #10b981;
@@ -92,10 +90,8 @@ p {
   @apply px-3 py-1.5 text-xs;
 }
 
-/* Updated CV Preview Styles */
 .cv-preview {
   @apply bg-white shadow-xl rounded-lg overflow-hidden w-full;
-  /* Remove fixed dimensions for responsive design */
 }
 
 .cv-preview-container {
@@ -107,7 +103,6 @@ p {
   background-color: rgba(255, 255, 255, 0.95);
 }
 
-/* Print-specific styles */
 @media print {
   body {
     @apply bg-white;
@@ -129,7 +124,6 @@ p {
     min-height: 297mm !important;
   }
 
-  /* Ensure proper A4 sizing when printing */
   .cv-preview-container {
     border: none !important;
     border-radius: 0 !important;
@@ -137,7 +131,6 @@ p {
     min-height: 297mm !important;
   }
 
-  /* Print page setup */
   @page {
     size: A4;
     margin: 0.5in;

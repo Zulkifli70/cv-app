@@ -27,7 +27,6 @@ const CvPreview = forwardRef((props, ref) => {
       className="w-full bg-white text-black print:shadow-none print:border-none"
       ref={ref}
       style={{
-        // Hanya apply dimensi A4 saat print
         minHeight: window.matchMedia
           ? window.matchMedia("print").matches
             ? "297mm"
