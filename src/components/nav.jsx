@@ -3,7 +3,7 @@ import "./App.css";
 function Nav({ loadSampleCV, handlePrint }) {
   return (
     <>
-      <div className="flex mb-5 justify-between">
+      <div className="flex mb-5 justify-between p-4">
         <div>
           <h2>Code by Zulkifli Firdausi</h2>
         </div>
