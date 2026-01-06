@@ -24,31 +24,23 @@ const CvPreview = forwardRef((props, ref) => {
 
   return (
     <div
-      className="w-full bg-white text-black print:shadow-none print:border-none"
+      className="w-full bg-white text-black shadow-2xl rounded-xl overflow-hidden"
       ref={ref}
-      style={{
-        minHeight: window.matchMedia
-          ? window.matchMedia("print").matches
-            ? "297mm"
-            : "auto"
-          : "auto",
-      }}
     >
-      <div className="p-6 space-y-4">
-        {/* Header Section */}
-        <div className="text-center border-b border-gray-300 pb-6 mb-6">
-          <h1 className="text-3xl font-bold mb-2 text-gray-900 tracking-wide">
+      <div className="p-8 space-y-6">
+        {/* Header */}
+        <div className="text-center border-b-2 border-gray-300 pb-6">
+          <h1 className="text-4xl font-bold mb-2 text-gray-900 tracking-wide">
             {data.info[0]?.text?.toUpperCase().trim()}{" "}
             {data.info[1]?.text?.toUpperCase().trim()}
           </h1>
-          <h2 className="text-base font-normal mb-4 text-gray-600">
+          <h2 className="text-lg font-normal mb-4 text-gray-600">
             {data.info[2]?.text}
           </h2>
-          <p className="text-sm mb-5 text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm mb-5 text-gray-600 max-w-3xl mx-auto leading-relaxed">
             {data.info[3]?.text}
           </p>
 
-          {/* Contact Info */}
           <div className="text-sm text-gray-600 flex flex-wrap justify-center gap-3">
             {data.info[4]?.text && (
               <span className="font-medium">{data.info[4].text}</span>
@@ -78,18 +70,18 @@ const CvPreview = forwardRef((props, ref) => {
           </div>
         </div>
 
-        {/* Education Section */}
+        {/* Education */}
         {data.education &&
           data.education.length > 0 &&
           data.education.some((edu) => edu.school || edu.degree) && (
             <div className="mb-6">
-              <h2 className="text-lg font-bold text-slate-800 mb-4 uppercase tracking-wider border-b-2 border-slate-800 pb-2">
+              <h2 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wider border-b-2 border-slate-800 pb-2">
                 EDUCATION
               </h2>
               <div className="space-y-4">
                 {data.education.map((element) => (
                   <div className="space-y-1" key={element.id}>
-                    <div className="flex justify-between items-start flex-wrap gap-2">
+                    <div className="flex justify-between items-start">
                       <h3 className="text-base font-bold text-gray-900">
                         {element.school?.trim()}
                       </h3>
@@ -99,7 +91,7 @@ const CvPreview = forwardRef((props, ref) => {
                         {element.nation?.trim()}
                       </span>
                     </div>
-                    <div className="flex justify-between items-start flex-wrap gap-2">
+                    <div className="flex justify-between items-start">
                       <h4 className="text-sm text-gray-700 italic">
                         {element.degree?.trim()}
                       </h4>
@@ -117,19 +109,19 @@ const CvPreview = forwardRef((props, ref) => {
             </div>
           )}
 
-        {/* Experience Section */}
+        {/* Experience */}
         {data.experience &&
           data.experience.length > 0 &&
           data.experience.some((exp) => exp.position || exp.company) && (
             <div className="mb-6">
-              <h2 className="text-lg font-bold text-slate-800 mb-4 uppercase tracking-wider border-b-2 border-slate-800 pb-2">
+              <h2 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wider border-b-2 border-slate-800 pb-2">
                 EXPERIENCE
               </h2>
               <div className="space-y-6">
                 {data.experience.map((element) => (
                   <div className="space-y-2" key={element.id}>
-                    <div className="flex justify-between items-start flex-wrap gap-2">
-                      <div className="flex flex-col gap-1 flex-1">
+                    <div className="flex justify-between items-start">
+                      <div className="flex flex-col gap-1">
                         <h3 className="text-base font-bold text-gray-900">
                           {element.position}
                         </h3>
@@ -143,7 +135,6 @@ const CvPreview = forwardRef((props, ref) => {
                         {element.endDate}
                       </span>
                     </div>
-
                     {element.jobDesc && (
                       <div className="ml-2 mt-3">
                         <ul className="space-y-2">
@@ -153,9 +144,7 @@ const CvPreview = forwardRef((props, ref) => {
                                 key={index}
                                 className="text-sm leading-relaxed text-gray-700 flex"
                               >
-                                <span className="text-gray-400 mr-3 flex-shrink-0">
-                                  •
-                                </span>
+                                <span className="text-gray-400 mr-3">•</span>
                                 <span>{item}</span>
                               </li>
                             )
@@ -169,12 +158,12 @@ const CvPreview = forwardRef((props, ref) => {
             </div>
           )}
 
-        {/* Skills Section */}
+        {/* Skills */}
         {data.skill &&
           data.skill.length > 0 &&
           data.skill.some((skill) => skill.skill) && (
             <div>
-              <h2 className="text-lg font-bold text-slate-800 mb-4 uppercase tracking-wider border-b-2 border-slate-800 pb-2">
+              <h2 className="text-xl font-bold text-slate-800 mb-4 uppercase tracking-wider border-b-2 border-slate-800 pb-2">
                 SKILLS
               </h2>
               <div className="grid grid-cols-3 gap-x-6 gap-y-3 mt-2">
@@ -182,7 +171,7 @@ const CvPreview = forwardRef((props, ref) => {
                   .filter((skill) => skill.skill?.trim())
                   .map((element) => (
                     <div key={element.id} className="flex items-center">
-                      <span className="text-gray-400 mr-2 text-xs">•</span>
+                      <span className="text-gray-400 mr-2">•</span>
                       <span className="text-sm font-medium text-gray-800">
                         {element.skill}
                       </span>

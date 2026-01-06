@@ -2,91 +2,89 @@ import "./App.css";
 
 function ExpForm({ data, addExp, removeExp, handleExp }) {
   return (
-    <div className="flex flex-col border-2 border-gray-200 max-w-md gap-4 p-4 rounded-lg bg-white shadow-sm">
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">Experience</h2>
-
-      {data.experience.map((experience, index) => (
-        <div key={experience.id}>
-          {data.experience.length > 1 && (
-            <div className="flex justify-between items-center mb-3">
-              <h3 className="text-lg font-medium text-gray-700">
-                Experience {index + 1}
-              </h3>
-              <button
-                onClick={() => removeExp(experience.id)}
-                className="w-8 h-8 bg-red-500 hover:bg-red-600 text-white rounded-full flex items-center justify-center font-bold transition-colors"
-                title="Remove experience"
-              >
-                ×
-              </button>
-            </div>
-          )}
-
-          <div className="space-y-3">
-            <div>
+    <div className="bg-gradient-to-br from-white to-emerald-50 rounded-xl shadow-lg border border-emerald-100 p-6 hover:shadow-xl transition-shadow duration-300">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-lg flex items-center justify-center">
+          <span className="text-xl">💼</span>
+        </div>
+        <h2 className="text-2xl font-bold text-gray-800">Work Experience</h2>
+      </div>
+      <div className="space-y-6">
+        {data.experience.map((experience, index) => (
+          <div
+            key={experience.id}
+            className="bg-white p-5 rounded-lg border-2 border-emerald-100 hover:border-emerald-300 transition-colors"
+          >
+            {data.experience.length > 1 && (
+              <div className="flex justify-between items-center mb-4">
+                <h3 className="text-lg font-semibold text-gray-700 flex items-center gap-2">
+                  <span className="text-emerald-600">🏢</span> Experience{" "}
+                  {index + 1}
+                </h3>
+                <button
+                  onClick={() => removeExp(experience.id)}
+                  className="w-9 h-9 bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white rounded-full flex items-center justify-center font-bold transition-all shadow-md hover:shadow-lg"
+                >
+                  ×
+                </button>
+              </div>
+            )}
+            <div className="space-y-3">
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
+                className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent hover:border-emerald-300 transition-all"
                 name="position"
                 value={experience.position}
                 onChange={(e) => handleExp(e, experience.id)}
                 placeholder="Position (e.g. Software Developer)"
               />
-            </div>
-
-            <div>
               <input
                 type="text"
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
+                className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent hover:border-emerald-300 transition-all"
                 name="company"
                 value={experience.company}
                 onChange={(e) => handleExp(e, experience.id)}
                 placeholder="Company (e.g. ABC Tech Company)"
               />
-            </div>
-
-            <div>
               <textarea
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none hover:border-blue-300 transition-colors"
+                className="w-full px-4 py-3 border-2 border-emerald-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none hover:border-emerald-300 transition-all"
                 name="jobDesc"
                 value={experience.jobDesc}
                 onChange={(e) => handleExp(e, experience.id)}
-                placeholder="Example:
-- Main capability 1
-- Main capability 2
-- Main capability 3"
+                placeholder="Job Description:
+- Main responsibility 1
+- Main responsibility 2
+- Main responsibility 3"
               />
+              <div className="grid grid-cols-2 gap-3">
+                <input
+                  type="text"
+                  className="px-4 py-3 border-2 border-emerald-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent hover:border-emerald-300 transition-all"
+                  name="startDate"
+                  value={experience.startDate}
+                  onChange={(e) => handleExp(e, experience.id)}
+                  placeholder="Start Date"
+                />
+                <input
+                  type="text"
+                  className="px-4 py-3 border-2 border-emerald-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent hover:border-emerald-300 transition-all"
+                  name="endDate"
+                  value={experience.endDate}
+                  onChange={(e) => handleExp(e, experience.id)}
+                  placeholder="End Date"
+                />
+              </div>
             </div>
-
-            <input
-              type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
-              name="startDate"
-              value={experience.startDate}
-              onChange={(e) => handleExp(e, experience.id)}
-              placeholder="Start Date"
-            />
-
-            <input
-              type="text"
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent hover:border-blue-300 transition-colors"
-              name="endDate"
-              value={experience.endDate}
-              onChange={(e) => handleExp(e, experience.id)}
-              placeholder="End Date"
-            />
           </div>
-        </div>
-      ))}
-
-      <button
-        className="w-full px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white font-medium rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
-        onClick={addExp}
-      >
-        <span className="text-lg">+</span>
-        Add Experience
-      </button>
+        ))}
+        <button
+          className="w-full px-5 py-3 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold rounded-lg transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+          onClick={addExp}
+        >
+          + Add Experience
+        </button>
+      </div>
     </div>
   );
 }
